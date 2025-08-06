@@ -7,6 +7,8 @@ function loadTemplate(id, url) {
         .catch(err => console.error(`Error cargando ${url}:`, err));
 }
 
+
+
 // Cargar plantillas
 loadTemplate("navbar", "components/navbar.html");
 loadTemplate("header", "components/header.html");
@@ -17,3 +19,4 @@ loadTemplate("hero2", "components/herov2.html");
 loadTemplate("products", "components/products.html");
 loadTemplate("cuadro", "components/cuadroCompras.html");
 loadTemplate("services", "components/services.html");
+loadTemplate("off", "components/offCanvas.html");

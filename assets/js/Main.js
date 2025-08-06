@@ -109,6 +109,9 @@ function mostrarProducts() {
     });
 }
 
+
+
+
 // 🚀 Inicializar al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     mostrarProducts();
