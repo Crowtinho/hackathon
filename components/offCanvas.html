@@ -5,62 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/css/carrito.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
 
     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
 
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <p>Try scrolling the rest of the page to see this option in action.</p>
-        <div class="carritoCompras">
-      <!-- Lista de productos -->
-      <div class="producto-lista">
-        <div class="producto-item">
-          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_627805-MCO75249286593_032024-F.webp" class="producto-img" alt="Producto">
-          <div class="producto-info">
-            <h4>zapatos</h4>
-            <div class="producto-precio" id="precio1">$     </div>
-            <div class="cantidad-control">
-              <button onclick="disminuirCantidad('calzado')">−</button>
-              <span id="cantidad1">1</span>
-              <button onclick="aumentarCantidad('calzado')">+</button>
-            </div>
-            <button class="eliminar" onclick="removeProduct('calzado')">Eliminar</button>
-          </div>
-        </div>
-    
-    
-      </div>
-    
-      <!-- Resumen de compra -->
-      <div class="resumen-compra">
-        <h3>Resumen de compra</h3>
-        <div class="resumen-item">
-          <span>Productos (2)</span>
-          <span id="subtotal">$9</span>
-        </div>
-        <div class="resumen-item">
-          <span>Envío</span>
-          <span>Gratis</span>
-        </div>
-        <div class="resumen-item total">
-          <span>Total</span>
-          <span id="total">$9</span>
-        </div>
-        <button class="continuar-btn">Continuar compra</button>
-      </div>
-    </div>
-    </div>
-    </div>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Try scrolling the rest of the page to see this option in action.</p>
+    <div class="producto-item"></div>
 
-
+  </div>
+</div>
     
 </body>
 </html>
