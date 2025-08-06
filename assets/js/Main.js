@@ -1,59 +1,108 @@
+// 📦 Funciones auxiliares
+function getCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+}
 
+function saveCarrito(carrito) {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function updateCarrito(carrito) {
+    saveCarrito(carrito);
+    mostrarProducts();
+    mostrarTotal();
+}
+
+// ➕ Agregar producto
 function addProduct(nombre, precio) {
-    //Aquí [] es un array vacío, lo que asegura que siempre se tenga una lista con la que trabajar, 
-    // incluso si el carrito todavía no existe en localStorage.
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    // Buscar si el producto ya existe, p => p.nombre === nombre es una función al vuelo
-    // en ella se compara que el nombre del producto a agregar sea igual que el del carrito
+    let carrito = getCarrito();
     let product = carrito.find(p => p.nombre === nombre);
+
     if (product) {
         product.cantidad += 1;
     } else {
         carrito.push({ nombre, precio, cantidad: 1 });
     }
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    updateCarrito(carrito);
 }
 
-
+// ❌ Eliminar producto
 function removeProduct(nombre) {
-    // 1. Recuperar carrito
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    // 2. Filtrar quitando el producto
-    carrito = carrito.filter(p => p.nombre !== nombre);
-
-    // 3. Guardar de nuevo
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    console.log(`Producto "${nombre}" eliminado del carrito.`);
+    let carrito = getCarrito().filter(p => p.nombre !== nombre);
+    updateCarrito(carrito);
 }
 
-
+// 🔼 Aumentar cantidad
 function aumentarCantidad(nombre) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+    let carrito = getCarrito();
     let producto = carrito.find(p => p.nombre === nombre);
 
     if (producto) {
         producto.cantidad += 1;
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        console.log(`Cantidad de "${nombre}" aumentada a ${producto.cantidad}`);
+        updateCarrito(carrito);
     }
 }
 
-
+// 🔽 Disminuir cantidad
 function disminuirCantidad(nombre) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+    let carrito = getCarrito();
     let producto = carrito.find(p => p.nombre === nombre);
 
     if (producto) {
         producto.cantidad -= 1;
         if (producto.cantidad <= 0) {
             carrito = carrito.filter(p => p.nombre !== nombre);
-            console.log(`"${nombre}" eliminado del carrito`);
         }
-        localStorage.setItem("carrito", JSON.stringify(carrito));
+        updateCarrito(carrito);
     }
 }
 
+// 💰 Calcular total
+function totalProducts() {
+    let carrito = getCarrito();
+    return carrito.reduce((suma, producto) =>
+        suma + (producto.precio * producto.cantidad), 0
+    );
+}
+
+// 📢 Mostrar total en la página
+function mostrarTotal() {
+    const totalElement = document.getElementById("total");
+    if (totalElement) {
+        totalElement.textContent = `$${totalProducts().toLocaleString()}`;
+    }
+}
+
+// 🖥 Mostrar productos en el DOM
+function mostrarProducts() {
+    const contenedor = document.querySelector(".producto-lista");
+    if (!contenedor) return;
+
+    let carrito = getCarrito();
+    contenedor.innerHTML = "";
+
+    if (carrito.length === 0) {
+        contenedor.innerHTML = "<p>No hay productos en el carrito.</p>";
+        return;
+    }
+
+    carrito.forEach(producto => {
+        const nueva = document.createElement("div");
+        nueva.className = "producto-item";
+        nueva.innerHTML = `
+            <img src="https://via.placeholder.com/80" alt="${producto.nombre}" class="producto-img">
+            <div class="producto-info">
+                <h4>${producto.nombre}</h4>
+                <div class="producto-precio">$${producto.precio.toLocaleString()}</div>
+                <div class="cantidad-control">
+                    <button onclick="disminuirCantidad('${producto.nombre}')">−</button>
+                    <span>${producto.cantidad}</span>
+                    <button onclick="aumentarCantidad('${producto.nombre}')">+</button>
+                </div>
+                <button class="eliminar" onclick="removeProduct('${producto.nombre}')">Eliminar</button>
+            </div>
+        `;
+        contenedor.appendChild(nueva);
+    });
+}

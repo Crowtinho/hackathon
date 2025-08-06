@@ -1,0 +1,38 @@
+
+  <div class="carritoCompras">
+    <!-- Lista de productos -->
+    <div class="producto-lista">
+      <div class="producto-item">
+        <div class="producto-info">
+          <h4>Zapatos Deportivos</h4>
+          <div class="producto-precio" id="precio1">$200</div>
+          <div class="cantidad-control">
+            <button onclick="disminuir(1)">−</button>
+            <span id="cantidad1">1</span>
+            <button onclick="aumentar(1)">+</button>
+          </div>
+          <button class="eliminar" onclick="eliminarProducto(1)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resumen de compra -->
+    <div class="resumen-compra">
+      <h3>Resumen de compra</h3>
+      <div class="resumen-item">
+        <span>Productos (1)</span>
+        <span id="subtotal">$200</span>
+      </div>
+      <div class="resumen-item">
+        <span>Envío</span>
+        <span>Gratis</span>
+      </div>
+      <div class="resumen-item total">
+        <span>Total</span>
+        <span id="total">$200</span>
+      </div>
+      <button class="continuar-btn">Continuar compra</button>
+    </div>
+  </div>
+
+ 
