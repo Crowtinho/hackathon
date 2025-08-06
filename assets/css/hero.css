@@ -1,0 +1,44 @@
+.hero{
+    background: #CD1D31;
+    background: linear-gradient(90deg, rgba(205, 29, 49, 1) 0%, rgba(243, 149, 35, 1) 80%);
+    color: white;
+    
+}
+.hero p {
+    font-size: 1.2rem;
+}
+
+.heroNumber{
+    color: rgb(243, 181, 35);
+}
+
+.deportiva{
+    background: linear-gradient(to right, rgba(243, 181, 35, 1) 0%, rgba(243, 149, 35, 1) 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.buttonHero {
+    background: white;
+    color: rgba(243, 149, 35, 1);
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttonHero:hover {
+    background: white;
+    color: rgba(243, 149, 35, 1);
+    transform: scale(1.05);
+    opacity: 0.9;
+    border: 2px black;
+    box-shadow: 0 6px 15px rgb(255, 170, 0);
+}
+
+.hero-img {
+    max-width: 80%;
+    border-radius: 20px;
+}

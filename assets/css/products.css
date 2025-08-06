@@ -64,32 +64,33 @@
 
 /* Contenedor de los iconos */
 .iconos-acciones {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .iconos-acciones i {
-  background-color: rgba(255, 255, 255, 0.6); /* semi-transparente */
-  color: #000;
-  padding: 6px;
-  border-radius: 60%;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.6); /* semi-transparente */
+    color: #000;
+    padding: 6px;
+    border-radius: 60%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 .iconos-acciones i:hover {
-  transform: scale(1.2);
-  background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .product-card:hover .iconos-acciones {
-  opacity: 1;
+    opacity: 1;   
 }
 
 /* Texto y precios */
