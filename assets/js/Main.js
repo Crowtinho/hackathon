@@ -1,50 +1,49 @@
+// 📦 Funciones auxiliares
+function getCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+}
 
+function saveCarrito(carrito) {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+// ➕ Agregar producto
 function addProduct(nombre, precio) {
-    //Aquí [] es un array vacío, lo que asegura que siempre se tenga una lista con la que trabajar, 
-    // incluso si el carrito todavía no existe en localStorage.
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    // Buscar si el producto ya existe, p => p.nombre === nombre es una función al vuelo
-    // en ella se compara que el nombre del producto a agregar sea igual que el del carrito
+    let carrito = getCarrito();
+
     let product = carrito.find(p => p.nombre === nombre);
     if (product) {
         product.cantidad += 1;
     } else {
         carrito.push({ nombre, precio, cantidad: 1 });
     }
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    saveCarrito(carrito);
 }
 
-
+// ❌ Eliminar producto
 function removeProduct(nombre) {
-    // 1. Recuperar carrito
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    // 2. Filtrar quitando el producto
+    let carrito = getCarrito();
     carrito = carrito.filter(p => p.nombre !== nombre);
-
-    // 3. Guardar de nuevo
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
+    saveCarrito(carrito);
     console.log(`Producto "${nombre}" eliminado del carrito.`);
 }
 
-
+// 🔼 Aumentar cantidad
 function aumentarCantidad(nombre) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+    let carrito = getCarrito();
     let producto = carrito.find(p => p.nombre === nombre);
 
     if (producto) {
         producto.cantidad += 1;
-        localStorage.setItem("carrito", JSON.stringify(carrito));
+        saveCarrito(carrito);
         console.log(`Cantidad de "${nombre}" aumentada a ${producto.cantidad}`);
     }
 }
 
-
+// 🔽 Disminuir cantidad
 function disminuirCantidad(nombre) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+    let carrito = getCarrito();
     let producto = carrito.find(p => p.nombre === nombre);
 
     if (producto) {
@@ -53,7 +52,23 @@ function disminuirCantidad(nombre) {
             carrito = carrito.filter(p => p.nombre !== nombre);
             console.log(`"${nombre}" eliminado del carrito`);
         }
-        localStorage.setItem("carrito", JSON.stringify(carrito));
+        saveCarrito(carrito);
     }
 }
 
+// 💰 Calcular total
+function totalProducts() {
+    let carrito = getCarrito();
+    let total = carrito.reduce((suma, producto) => 
+        suma + (producto.precio * producto.cantidad), 0
+    );
+    return total;
+}
+
+// 📢 Mostrar total en la página
+function mostrarTotal() {
+    const totalElement = document.getElementById("total");
+    if (totalElement) {
+        totalElement.textContent = totalProducts();
+    }
+}
