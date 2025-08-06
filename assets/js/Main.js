@@ -16,8 +16,8 @@ function updateCarrito(carrito) {
 // ➕ Agregar producto
 function addProduct(nombre, precio) {
     let carrito = getCarrito();
-
     let product = carrito.find(p => p.nombre === nombre);
+
     if (product) {
         product.cantidad += 1;
     } else {
@@ -31,7 +31,6 @@ function addProduct(nombre, precio) {
 function removeProduct(nombre) {
     let carrito = getCarrito().filter(p => p.nombre !== nombre);
     updateCarrito(carrito);
-    console.log(`Producto "${nombre}" eliminado del carrito.`);
 }
 
 // 🔼 Aumentar cantidad
@@ -42,7 +41,6 @@ function aumentarCantidad(nombre) {
     if (producto) {
         producto.cantidad += 1;
         updateCarrito(carrito);
-        console.log(`Cantidad de "${nombre}" aumentada a ${producto.cantidad}`);
     }
 }
 
@@ -55,7 +53,6 @@ function disminuirCantidad(nombre) {
         producto.cantidad -= 1;
         if (producto.cantidad <= 0) {
             carrito = carrito.filter(p => p.nombre !== nombre);
-            console.log(`"${nombre}" eliminado del carrito`);
         }
         updateCarrito(carrito);
     }
@@ -94,6 +91,7 @@ function mostrarProducts() {
         const nueva = document.createElement("div");
         nueva.className = "producto-item";
         nueva.innerHTML = `
+            <img src="https://via.placeholder.com/80" alt="${producto.nombre}" class="producto-img">
             <div class="producto-info">
                 <h4>${producto.nombre}</h4>
                 <div class="producto-precio">$${producto.precio.toLocaleString()}</div>
@@ -108,12 +106,3 @@ function mostrarProducts() {
         contenedor.appendChild(nueva);
     });
 }
-
-
-
-
-// 🚀 Inicializar al cargar la página
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarProducts();
-    mostrarTotal();
-});
