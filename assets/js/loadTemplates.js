@@ -8,6 +8,7 @@ function loadTemplate(id, url) {
 }
 
 // Cargar plantillas
+loadTemplate("navbar", "components/navbar.html");
 loadTemplate("header", "components/header.html");
 loadTemplate("footer", "components/footer.html");
 loadTemplate("contact", "components/contact.html");
