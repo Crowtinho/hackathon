@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resumen de Compra</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      padding: 40px;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .producto-lista {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 700px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .producto-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      gap: 20px;
+    }
+
+    .producto-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .producto-info {
+      flex: 1;
+    }
+
+    .producto-info h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .producto-precio {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    .cantidad-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cantidad-control button {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #ddd;
+      cursor: pointer;
+    }
+
+    .eliminar {
+      background: none;
+      color: #007bff;
+      border: none;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .resumen-compra {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .resumen-compra h3 {
+      margin-top: 0;
+    }
+
+    .resumen-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 18px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+
+    .continuar-btn {
+      background-color: #3483fa;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .continuar-btn:hover {
+      background-color: #2968c8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Lista de productos -->
+    <div class="producto-lista">
+      <div class="producto-item">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_627805-MCO75249286593_032024-F.webp" class="producto-img" alt="Producto">
+        <div class="producto-info">
+          <h4>zapatos</h4>
+          <div class="producto-precio" id="precio1">$     </div>
+          <div class="cantidad-control">
+            <button onclick="disminuir(1)">−</button>
+            <span id="cantidad1">1</span>
+            <button onclick="aumentar(1)">+</button>
+          </div>
+          <button class="eliminar" onclick="eliminarProducto(1)">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="producto-item">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_607494-MCO75357751430_032024-F.webp" class="producto-img" alt="Producto">
+        <div class="producto-info">
+          <h4>balon </h4>
+          <div class="producto-precio" id="precio2">$ </div>
+          <div class="cantidad-control">
+            <button onclick="disminuir(2)">−</button>
+            <span id="cantidad2">1</span>
+            <button onclick="aumentar(2)">+</button>
+          </div>
+          <button class="eliminar" onclick="eliminarProducto(2)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resumen de compra -->
+    <div class="resumen-compra">
+      <h3>Resumen de compra</h3>
+      <div class="resumen-item">
+        <span>Productos (2)</span>
+        <span id="subtotal">$9</span>
+      </div>
+      <div class="resumen-item">
+        <span>Envío</span>
+        <span>Gratis</span>
+      </div>
+      <div class="resumen-item total">
+        <span>Total</span>
+        <span id="total">$9</span>
+      </div>
+      <button class="continuar-btn">Continuar compra</button>
+    </div>
+  </div>
+
+  <script>
+    let cantidades = {
+      1: 1,
+      2: 1
+    };
+
+    const precios = {
+      1: 1225480,
+      2: 440999
+    };
+
+    function actualizarResumen() {
+      let subtotal = 0;
+      for (let id in cantidades) {
+        subtotal += cantidades[id] * precios[id];
+      }
+      document.getElementById("subtotal").textContent = `$${subtotal.toLocaleString()}`;
+      document.getElementById("total").textContent = `$${subtotal.toLocaleString()}`;
+    }
+
+    function aumentar(id) {
+      cantidades[id]++;
+      document.getElementById("cantidad" + id).textContent = cantidades[id];
+      actualizarResumen();
+    }
+
+    function disminuir(id) {
+      if (cantidades[id] > 1) {
+        cantidades[id]--;
+        document.getElementById("cantidad" + id).textContent = cantidades[id];
+        actualizarResumen();
+      }
+    }
+
+    function eliminarProducto(id) {
+      cantidades[id] = 0;
+      const producto = document.querySelector(`.producto-item:nth-child(${id})`);
+      if (producto) producto.remove();
+      actualizarResumen();
+    }
+  </script>
+</body>
+</html>
