@@ -1,0 +1,69 @@
+/* Gradiente del título */
+.text-gradient {
+    background: linear-gradient(to right, #ff6a00, #ff3c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Tamaño para todas las tarjetas */
+.servicio-card {
+    border-radius: 12px;
+    min-height: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* Colores suaves */
+.bg-light-blue {
+    background-color: #f0f6ff;
+    border: 1px solid #cfe2ff;
+}
+
+.bg-light-green {
+    background-color: #f0fff5;
+    border: 1px solid #d1e7dd;
+}
+
+.bg-light-purple {
+    background-color: #faf0ff;
+    border: 1px solid #e5d1ff;
+}
+
+.bg-light-red {
+    background-color: #fff5f5;
+    border: 1px solid #f8d7da;
+}
+
+/* Bordes personalizados */
+.border-purple-subtle {
+    border: 1px solid #e0b3ff !important;
+}
+
+/* Círculo del ícono */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Colores personalizados */
+.bg-purple {
+    background-color: #a34ef4;
+}
+
+/* Línea decorativa inferior */
+.linea-indicador {
+    height: 4px;
+    width: 40px;
+    border-radius: 2px;
+    margin-top: 10px;
+}
