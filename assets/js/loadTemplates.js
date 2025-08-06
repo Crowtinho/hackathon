@@ -16,3 +16,4 @@ loadTemplate("hero", "components/hero.html");
 loadTemplate("hero2", "components/hero.html");
 loadTemplate("products", "components/products.html");
 loadTemplate("cuadro", "components/cuadroCompras.html");
+loadTemplate("services", "components/services.html");
