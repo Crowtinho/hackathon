@@ -1,0 +1,40 @@
+
+
+  <div class="carritoCompras">
+    <!-- Lista de productos -->
+    <div class="producto-lista">
+      <div class="producto-item">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_627805-MCO75249286593_032024-F.webp" class="producto-img" alt="Producto">
+        <div class="producto-info">
+          <h4>zapatos</h4>
+          <div class="producto-precio" id="precio1">$     </div>
+          <div class="cantidad-control">
+            <button onclick="disminuirCantidad('calzado')">−</button>
+            <span id="cantidad1">1</span>
+            <button onclick="aumentarCantidad('calzado')">+</button>
+          </div>
+          <button class="eliminar" onclick="removeProduct('calzado')">Eliminar</button>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Resumen de compra -->
+    <div class="resumen-compra">
+      <h3>Resumen de compra</h3>
+      <div class="resumen-item">
+        <span>Productos (2)</span>
+        <span id="subtotal">$9</span>
+      </div>
+      <div class="resumen-item">
+        <span>Envío</span>
+        <span>Gratis</span>
+      </div>
+      <div class="resumen-item total">
+        <span>Total</span>
+        <span id="total">$9</span>
+      </div>
+      <button class="continuar-btn">Continuar compra</button>
+    </div>
+  </div>
