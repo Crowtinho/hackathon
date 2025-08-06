@@ -13,7 +13,7 @@ loadTemplate("header", "components/header.html");
 loadTemplate("footer", "components/footer.html");
 loadTemplate("contact", "components/contact.html");
 loadTemplate("hero", "components/hero.html");
-loadTemplate("hero2", "components/hero.html");
+loadTemplate("hero2", "components/herov2.html");
 loadTemplate("products", "components/products.html");
 loadTemplate("cuadro", "components/cuadroCompras.html");
 loadTemplate("services", "components/services.html");
