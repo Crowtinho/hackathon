@@ -1,0 +1,49 @@
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:500;
+  font-style: normal;
+}
+
+/* Estilo base del nav-link */
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    /* Línea inferior invisible por defecto */
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #ff5722; 
+      transition: width 0.6s ease;
+    }
+
+    /* Al pasar el mouse, aparece la línea */
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover{
+        color: #ff5722  !important;;
+    }
+
+.btn-outline-custom {
+  color: #ff5722; /* Tu color personalizado (naranja en este caso) */
+  border: 2px solid #F39523;
+  background-color: #F39523;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  background-color: #ff5722;
+  color: #fff;
+}
