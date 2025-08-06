@@ -1,71 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactanos</title>
-</head>
-<body>
-    <div class="container mt-5">
+
+<div class="container mt-5 mb-4">
     <div class="row">
         <div class="col-md-5">
-            <h2>Contactanos<span class="text-danger">Ahora</span></h2>
-            <p>¿Cuentas con alguna pregunta?Nuesto equipo esta aqui para ayudarte.</p>
+            <h2>Contáctanos<span class="text-danger"> Ahora</span></h2>
+            <p>¿Cuentas con alguna pregunta? Nuestro equipo está aquí para ayudarte.</p>
 
-            <h5> Informacion de contacto <contacto></h5>
-                <ul class="list-unstyled">
+            <h5>Información de contacto</h5>
+            <ul class="list-unstyled">
                 <li>
                     <strong>📍 Ubicación:</strong><br>
                     Calle Falsa 123, Ciudad, País
-                    Jump City, Country
-            
                 </li>
                 <li class="mt-3">
                     <strong>📞 Teléfono:</strong><br>
-                    +57(322) 123-4567 <br>
-                    Lunes a Sabado 9AM/8PM
+                    +57 (322) 123-4567 <br>
+                    Lunes a Sábado 9AM – 8PM
                 </li>
                 <li class="mt-3">
                     <strong>📧 Correo Electrónico:</strong><br>
-                    Sportify@gmail.com><br>
+                    sportify@gmail.com
                 </li>
-                </ul>
+            </ul>
+
         </div>
 
-          <!--  Formulario -->
-    <div class="col-md-7">
-        <form>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="nombre"class="form-label">Nombre Completo</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo">
-                
+
+        <!--  Formulario -->
+        <div class="col-md-7">
+            <form>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="nombre"class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo">
+                    </div>
                 </div>
-               
+
+                <div class="mb-3">
+
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="tu@email.com">
                 </div>
                 <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="tu@email.com">
-        </div>
-        <div class="mb-3">
-          <label for="asunto" class="form-label">Asunto</label>
-          <input type="text" class="form-control" id="asunto" placeholder="¿En qué podemos ayudarte?">
-        </div>
-        <div class="mb-3">
-          <label for="mensaje" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-danger w-100">✉️ Enviar Mensaje</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-        </form>
-
+                    <label for="asunto" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" id="asunto" placeholder="¿En qué podemos ayudarte?">
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <button type="submit" class=" w-25 btn-agregar-carrito d-block mx-auto">✉️ Enviar Mensaje</button>
+            </form>
         </div>
     </div>
-
-</body>
-</html>
+</div>
