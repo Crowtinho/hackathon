@@ -1,3 +1,10 @@
+/* Gradiente del título */
+.text-gradient {
+    background: linear-gradient(to right, #ff6a00, #ff3c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .product-card {
     width: 290px;
     border: 1px solid rgba(0, 0, 0, 0.116);
