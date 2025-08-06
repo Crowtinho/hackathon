@@ -1,7 +1,8 @@
 
+
 .navbar{
-    position: fixed;
-    position: fixed;
+    position: sticky;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -57,3 +58,13 @@
   background-color: #881421;
   color: #fff;
 }
+
+
+/*SECCION DE FOOTER*/
+
+.footer-sticky {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+        }
