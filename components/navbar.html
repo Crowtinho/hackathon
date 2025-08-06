@@ -1,75 +1,129 @@
-
-    <header class="d-flex flex-column">
-    <nav class="navbar navbar-expand-lg py-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">
-                <img src="/assets/img/logo.png" 
-                        alt="logo" width="150" height="150" class="d-inline-block" aria-label="logo">
-            </a>
-            
-            <!-- Botón hamburguesa -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" aria-label="botón menú">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!-- Contenido del navbar -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Menú de navegación centrado en pantallas grandes -->
-                <ul class="navbar-nav mx-auto d-none d-lg-flex ">
-                    <li class="nav-item">
-                        <a class="nav-link active mx-5 fs-4 montserrat " href="#" aria-label="Inicio"><i class="bi bi-house mx-3"></i
-                            >Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-5 fs-4 montserrat" href="#" aria-label="Productos"><i class="bi bi-bag mx-3"></i>
-                            Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-5 fs-4 montserrat" href="#" aria-label="Servicios"><i class="bi bi-clipboard-check mx-3"></i>
-                            Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-5 fs-4 montserrat" href="#" aria-label="Contacto"><i class="bi bi-telephone mx-3"></i>
-                            Contacto</a>
-                    </li>
-                </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="icon" href="/assets/img/logo.png" type="icon">
+</head>
+<body>
+      <header class="d-flex flex-column">
+        <nav class="navbar navbar-expand-lg py-2 shadow-lg  mb-2 bg-body-tertiary rounded">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="/assets/img/logo.png" 
+                         alt="logo" width="110" height="110" class="d-inline-block" aria-label="logo">
+                </a>
                 
-                <!-- Menú para pantallas pequeñas -->
-                <ul class="navbar-nav d-lg-none w-100 text-center">
-                    <li class="nav-item py-2">
-                        <a class="nav-link fs-4 montserrat text-dak" href="#"><i class="bi bi-house mx-3"></i>
-                            Inicio</a>
-                    </li>
-                    <li class="nav-item py-2">
-                        <a class="nav-link fs-4 montserrat  text-white" href="#"><i class="bi bi-bag mx-3"></i>
-                            Productos</a>
-                    </li>
-                    <li class="nav-item py-2">
-                        <a class="nav-link fs-4 montserrat text-white " href="#"><i class="bi bi-clipboard-check mx-3"></i>
-                            Servicios</a>
-                    </li>
-                    <li class="nav-item py-2">
-                        <a class="nav-link fs-4 montserrat text-white " href="#"><i class="bi bi-telephone mx-3"></i>
-                            Contacto</a>
-                    </li>
-                    <li class="nav-item mt-3">
-                        <button  id="botonCarritolg" type="button" class=" btn btn-outline-custom py-3 montserrat text-white">
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                        aria-expanded="false" aria-label="botón menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Contenido del navbar -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Menú de navegación centrado en pantallas grandes -->
+                    <ul class="navbar-nav mx-auto d-none d-lg-flex ">
+                        <li class="nav-item">
+                            <a class="nav-link active mx-5 fs-5 montserrat " href="#" aria-label="Inicio"><i class="bi bi-house mx-3"></i
+                                >Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-5 fs-5 montserrat" href="#" aria-label="Productos"><i class="bi bi-bag mx-3"></i>
+                                Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-5 fs-5 montserrat" href="#" aria-label="Servicios"><i class="bi bi-clipboard-check mx-3"></i>
+                                Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-5 fs-5 montserrat" href="#" aria-label="Contacto"><i class="bi bi-telephone mx-3"></i>
+                                Contacto</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Menú para pantallas pequeñas -->
+                    <ul class="navbar-nav d-lg-none w-100 text-center">
+                        <li class="nav-item py-2">
+                            <a class="nav-link fs-4 montserrat text-dak" href="#"><i class="bi bi-house mx-3"></i>
+                                Inicio</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link fs-4 montserrat  text-white" href="#"><i class="bi bi-bag mx-3"></i>
+                                Productos</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link fs-4 montserrat text-white " href="#"><i class="bi bi-clipboard-check mx-3"></i>
+                                Servicios</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link fs-4 montserrat text-white " href="#"><i class="bi bi-telephone mx-3"></i>
+                                Contacto</a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <button  id="botonCarritolg" type="button" class=" btn btn-outline-custom py-3 montserrat text-white">
+                                <i class="bi bi-cart fs-4 text-white"></i> Ir al carrito
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <!-- Botón carrito en pantallas grandes -->
+                    <div class="d-none d-lg-block ms-auto px-3">
+                        <button  id="botonCarritosm" type="button" class="btn btn-outline-custom py-3 montserrat text-white">
                             <i class="bi bi-cart fs-4 text-white"></i> Ir al carrito
                         </button>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <footer class=" footer-section bg-dark text-white text-center py-4 footer-fixed">
+        <div class="container">
+            <div class="row">
+                <!-- Información principal del footer -->
+                <div class="col-md-8">
+                    <p class="mb-1">© 2025 Sportify. Todos los derechos reservados.</p>
+                    <p class="mb-2">Creado por equipo de desarrollo 8 👨‍💻</p>
+                    <div>
+                        <a href="https://github.com/Crowtinho/hackathon" class="text-white"><i class="bi bi-github fs-3 mx-3"></i></a>
+                    </div>
+                </div>
                 
-                <!-- Botón carrito en pantallas grandes -->
-                <div class="d-none d-lg-block ms-auto px-3">
-                    <button  id="botonCarritosm" type="button" class="btn btn-outline-custom py-3 montserrat text-white">
-                        <i class="bi bi-cart fs-4 text-white"></i> Ir al carrito
-                    </button>
+                <!-- Columna del equipo -->
+                <div class="col-md-4">
+                    <h6 class="mb-3">Nuestro Equipo</h6>
+                    <div class="row row-cols-2 g-2">
+                    <div class="col">
+                        <small><a href="https://www.linkedin.com/in/estefania-pachon-ing-fullstack/">Estefania Pachon</a></small>
+                    </div>
+                    <div class="col">
+                        <small><a href="https://www.linkedin.com/in/andres-cuervo-dev/">Andrés Cuervo</a></small>
+                    </div>
+                    <div class="col">
+                        <small><a href="https://www.linkedin.com/in/andr%C3%A9s-v-8a0007213/">Andrés Vanegas</a></small>
+                     </div>
+                    <div class="col">
+                        <small><a href="https://www.linkedin.com/in/miguel-angel-simbaqueba-developer">Miguel Simbaqueba</a></small>
+                     </div>
                 </div>
             </div>
         </div>
-    </nav>
-</header>
+    </footer>
 
+
+</body>
+</html>
