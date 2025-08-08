@@ -1,5 +1,3 @@
-
-
 .navbar{
     position: fixed;
     top: 0;
@@ -16,35 +14,35 @@
 }
 
 /* Estilo base del nav-link */
-    .nav-link {
-      position: relative;
-      display: inline-block;
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-    /* Línea inferior invisible por defecto */
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 2px;
-      background-color: #F39523;
-      transition: width 0.6s ease;
-    }
+/* Línea inferior invisible por defecto */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #F39523;
+  transition: width 0.6s ease;
+}
 
-    /* Al pasar el mouse, aparece la línea */
-    .nav-link:hover::after {
-      width: 100%;
-    }
+/* Al pasar el mouse, aparece la línea */
+.nav-link:hover::after {
+  width: 100%;
+}
 
-    .nav-link:hover{
-        color: #881421  !important;;
-    }
+.nav-link:hover{
+    color: #881421  !important;;
+}
 
 .btn-outline-custom {
   color: #881421; /* Tu color personalizado (naranja en este caso) */
@@ -57,5 +55,8 @@
   background-color: #881421;
   color: #fff;
 }
+
+
+
 
 
