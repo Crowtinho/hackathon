@@ -155,6 +155,14 @@ function countProducts() {
     });
 }
 
+function cleanForm(){
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(event) {
+    // Permite que se envíe el formulario
+    setTimeout(() => form.reset(), 100); // Da tiempo a Formspree para procesar
+  });
+}
+
 
 function generarFacturaHTML(nombreCliente = "Cliente") {
     const carrito = getCarrito();
@@ -277,11 +285,9 @@ function enviarFacturaPorEmail(nombreCliente = "Cliente") {
 
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     mostrarProducts();
-//     mostrarTotal();
-//     countProducts(); // <-- Este es crucial
-// });
+document.addEventListener("DOMContentLoaded", function () {
+    cleanForm()
+});
 
 
 
